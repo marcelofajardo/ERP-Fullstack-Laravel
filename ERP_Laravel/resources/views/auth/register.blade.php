@@ -10,12 +10,12 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                         <input type="hidden" name="type" value="client">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control " name="name" >
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control  name="email">
+                                <input id="email" type="email" class="form-control"s  name="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -42,7 +42,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __(' Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control  name="address">
+                                <input id="address" type="text" class="form-control" name="address" >
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@
                             <label for="cif_nif" class="col-md-4 col-form-label text-md-right">{{ __('Cif-Nif') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cif_nif" type="text" class="form-control  name="cif_nif">
+                                <input id="cif_nif" type="text" class="form-control"  name="cif_nif">
 
                                 @error('cif_nif')
                                     <span class="invalid-feedback" role="alert">
@@ -76,7 +76,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control  name="password">
+                                <input id="password" type="password" class="form-control"  name="password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
