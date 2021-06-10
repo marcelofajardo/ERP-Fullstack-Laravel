@@ -13,15 +13,27 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        *{
+          font-family: 'Oswald', sans-serif;
+         }
+        .logo{
+         font-family: 'Nunito', sans-serif;
+        }
+
+
+ </style>
 </head>
 <body>
     <div id="app">
-        <nav class="bg-white shadow-sm navbar navbar-expand-md navbar-light">
+        <nav class=" navbar navbar-expand-lg navbar-light bg-warning" >
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
