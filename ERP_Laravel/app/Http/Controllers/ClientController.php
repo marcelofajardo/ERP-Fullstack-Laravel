@@ -60,7 +60,7 @@ class ClientController extends Controller
 
       Auth::login($user);
 
-      return response()->json(compact('user',201);
+      return response()->json(compact('user',201));
   }
 
   /**

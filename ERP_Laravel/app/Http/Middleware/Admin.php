@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Admin
 {
@@ -16,7 +17,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        $userType = $user->type;
+        $userType = Auth::user()->type;
 
         if ($userType !== 'admin') {
             return response()->json(['status' => 'You do not have Admin permissions']);
