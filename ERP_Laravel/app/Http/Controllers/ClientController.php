@@ -93,7 +93,7 @@ class ClientController extends Controller
           'success' => true,
           'message' => 'Client actualizado correctamente',
           'user' => $client,
-      ], status:200);
+      ],200);
   }
 
   /**
@@ -110,6 +110,6 @@ class ClientController extends Controller
       return response()->json([
           'success' => true,
           'message' => 'Client eliminado correctamente',
-      ], status:200);
+      ], 200);
   }
 }

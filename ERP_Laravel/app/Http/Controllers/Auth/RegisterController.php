@@ -57,6 +57,9 @@ class RegisterController extends Controller
             'image' => ['required', 'string', 'max:255'],
            'password' => ['required', 'string', 'min:8'],
         ]);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+         }
     }
 
     /**

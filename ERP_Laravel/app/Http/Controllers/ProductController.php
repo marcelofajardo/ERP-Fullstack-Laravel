@@ -39,7 +39,7 @@ class ProductController extends Controller
           'success' => true,
           'message' => 'Product creado correctamente',
           'user' => $product,
-      ], status:201);
+      ], 201);
   }
 
   /**
@@ -71,7 +71,7 @@ class ProductController extends Controller
           'success' => true,
           'message' => 'Product actualizado correctamente',
           'user' => $product,
-      ], status:201);
+      ], 201);
   }
 
   /**
@@ -88,6 +88,6 @@ class ProductController extends Controller
       return response()->json([
           'success' => true,
           'message' => 'Product eliminado correctamente',
-      ], status:200);
+      ], 200);
   }
 }

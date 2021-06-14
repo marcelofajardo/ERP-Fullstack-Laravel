@@ -42,7 +42,7 @@ class EmployeeController extends Controller
          'success' => true,
          'message' => 'Employee creado correctamente',
          'user' => $employee,
-     ], status:200);
+     ],200);
  }
 
  /**
@@ -75,7 +75,7 @@ class EmployeeController extends Controller
          'success' => true,
          'message' => 'Employee actualizado correctamente',
          'user' => $employee,
-     ], status:200);
+     ],200);
  }
 
  /**
@@ -92,6 +92,6 @@ class EmployeeController extends Controller
      return response()->json([
          'success' => true,
          'message' => 'Employee eliminado correctamente',
-     ], status:200);
+     ],200);
  }
 }
