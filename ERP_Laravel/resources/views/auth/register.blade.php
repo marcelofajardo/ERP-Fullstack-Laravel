@@ -7,20 +7,21 @@
             <div class="text-center card">
                 <div class="bg-warning card-header">{{ __('Register') }}</div>
 
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                         <input type="hidden" name="type" value="client">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input value="{{ old('name')}}" id="name" type="text" class="form-control " name="name" >
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+
+                                <div class="text-danger">{{ $message }}</div>
+
                                 @enderror
                             </div>
                         </div>
@@ -29,12 +30,11 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control  name="email">
+                                <input value="{{ old('email')}}" id="email" type="email" class="form-control"s  name="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <div class="text-danger">{{ $message }}</div>
+
                                 @enderror
                             </div>
                         </div>
@@ -42,12 +42,11 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __(' Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control  name="address">
+                                <input value="{{ old('address')}}" id="address" type="text" class="form-control" name="address" >
 
                                 @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <div class="text-danger">{{ $message }}</div>
+
                                 @enderror
                             </div>
                         </div>
@@ -55,12 +54,11 @@
                             <label for="cif_nif" class="col-md-4 col-form-label text-md-right">{{ __('Cif-Nif') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cif_nif" type="text" class="form-control  name="cif_nif">
+                                <input value="{{ old('cif_nif')}}" id="cif_nif" type="text" class="form-control"  name="cif_nif">
 
                                 @error('cif_nif')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <div class="text-danger">{{ $message }}</div>
+
                                 @enderror
                             </div>
                         </div>
@@ -68,7 +66,12 @@
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
                             <div class="col-md-6">
-                                <input id="image" type="text" class="form-control" name="image">
+                                <input value="{{ old('image')}}" id="image" type="text" class="form-control" name="image">
+
+                                @error('image')
+                                <div class="text-danger">{{ $message }}</div>
+
+                                @enderror
                             </div>
                         </div>
 
@@ -76,12 +79,10 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control  name="password">
+                                <input value="{{ old('password')}}" id="password" type="password" class="form-control"  name="password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
