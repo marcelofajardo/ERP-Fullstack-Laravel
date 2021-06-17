@@ -46,6 +46,11 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="{{ route('clients.show',$client->id)}}"><i class="far fa-eye fa-lg text-success"></i></a>
                                 <a href="{{ route('clients.edit',$client->id)}}"><i class="far fa-edit fa-lg text-secondary"></i></a>
+                                <form action="{{ route('clients.destroy',$client->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn"><i class="far fa-trash-alt fa-lg text-danger"></i></button>
+                                </form>
 
 
 

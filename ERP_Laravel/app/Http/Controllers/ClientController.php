@@ -39,6 +39,16 @@ class ClientController extends Controller
    */
   public function store(Request $request)
   {
+
+    $validated = $request->validate([
+        'name' => 'required|max:255',
+        'email' => 'required|email',
+        'address' => 'required|string|max:255',
+        'cif_nif' => 'required|string|max:12',
+        'type' => 'required',
+        'image' => 'required|string|max:255',
+        'password' => 'required|min:8'
+    ]);
       User::create($request->all());
 
      return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
@@ -76,6 +86,15 @@ class ClientController extends Controller
   public function update(Request $request, $id)
   {
      $user =User::findOrFail($id);
+     $validated = $request->validate([
+        'name' => 'required|max:255',
+        'email' => 'required|email',
+        'address' => 'required|string|max:255',
+        'cif_nif' => 'required|string|max:12',
+        'type' => 'required',
+        'image' => 'required|string|max:255',
+        'password' => 'required|min:8'
+    ]);
     $user->update($request->all());
     return redirect()->route('clients.index')->with("success"," Cliente Actualizado" );
   }
@@ -89,6 +108,8 @@ class ClientController extends Controller
    */
   public function destroy($id)
   {
-
+    $user =User::findOrFail($id);
+    $user->delete();
+    return redirect()->route('clients.index')->with("success"," Cliente Eliminado" );
   }
 }
