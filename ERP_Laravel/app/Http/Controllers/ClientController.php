@@ -9,8 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\Support\Facades\Validator;
+
 
 class ClientController extends Controller
 {
@@ -21,13 +20,16 @@ class ClientController extends Controller
    */
   public function index()
   {
-      $clients = User::where('type', 'client')->get();
+   $clients = User::where('type', 'client')->get();
 
-      foreach($clients as $client){
-          unset($client->dni, $client->phone, $client->salary);
-      }
-      return response()->json($clients, 201);
+
+
+  return view('clients.index',compact('clients'));
   }
+  public function create(){
+      return view('clients.create');
+  }
+
 
   /**
    * Store a newly created resource in storage.
@@ -37,30 +39,19 @@ class ClientController extends Controller
    */
   public function store(Request $request)
   {
-      $validate = $request->validate([
-          'name' => 'required|string|max:255',
-          'email' => 'required|string|email|max:255|unique:users',
-          'address' => 'required|string|max:255',
-          'cif_nif' => 'required|string|unique:users',
-          'image' => 'required|string|max:255',
-          'password' => 'required|string|min:8',
-      ]);
 
-      $user = User::create([
-          'name' => $request->name,
-          'email' => $request->email,
-          'type' => 'client',
-          'address' => $request->address,
-          'cif_nif' => $request->cif_nif,
-          'image' => $request->image,
-          'password' => Hash::make($request->password),
-      ]);
+    $validated = $request->validate([
+        'name' => 'required|max:255',
+        'email' => 'required|email',
+        'address' => 'required|string|max:255',
+        'cif_nif' => 'required|string|max:12',
+        'type' => 'required',
+        'image' => 'required|string|max:255',
+        'password' => 'required|min:8'
+    ]);
+      User::create($request->all());
 
-      event(new Registered($user));
-
-      Auth::login($user);
-
-      return response()->json(compact('user',201));
+     return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
   }
 
   /**
@@ -71,11 +62,19 @@ class ClientController extends Controller
    */
   public function show($id)
   {
-      $client = User::find($id);
-      unset($client->dni, $client->phone, $client->salary);
-
-      return response()->json($client, 201);
+     $user = User::find($id);
+     return view('clients.show',compact('user'));
   }
+
+
+
+  public function edit($id)
+  {
+    $user = User::find($id);
+    return view('clients.edit',compact('user'));
+  }
+
+
 
   /**
    * Update the specified resource in storage.
@@ -86,15 +85,20 @@ class ClientController extends Controller
    */
   public function update(Request $request, $id)
   {
-      $client = User::findOrFail($id);
-      $client->update($request->all());
-
-      return response()->json([
-          'success' => true,
-          'message' => 'Client actualizado correctamente',
-          'user' => $client,
-      ],200);
+     $user =User::findOrFail($id);
+     $validated = $request->validate([
+        'name' => 'required|max:255',
+        'email' => 'required|email',
+        'address' => 'required|string|max:255',
+        'cif_nif' => 'required|string|max:12',
+        'type' => 'required',
+        'image' => 'required|string|max:255',
+        'password' => 'required|min:8'
+    ]);
+    $user->update($request->all());
+    return redirect()->route('clients.index')->with("success"," Cliente Actualizado" );
   }
+
 
   /**
    * Remove the specified resource from storage.
@@ -104,12 +108,8 @@ class ClientController extends Controller
    */
   public function destroy($id)
   {
-      $client = User::findOrFail($id);
-      $client->delete();
-
-      return response()->json([
-          'success' => true,
-          'message' => 'Client eliminado correctamente',
-      ], 200);
+    $user =User::findOrFail($id);
+    $user->delete();
+    return redirect()->route('clients.index')->with("success"," Cliente Eliminado" );
   }
 }
