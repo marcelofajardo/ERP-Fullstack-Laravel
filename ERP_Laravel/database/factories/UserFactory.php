@@ -61,4 +61,14 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    //Para poblar la tabla. Borrar cuando esté verificado el funcionamiento
+    public function employee()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'type' => 'employee',
+            ];
+        });
+    }
 }

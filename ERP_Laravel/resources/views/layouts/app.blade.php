@@ -63,7 +63,7 @@
                             <a class="nav-link " href="#">Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Employees</a>
+                            <a class="nav-link " href="{{ route('employees.index') }}">Employees</a>
                         </li>
                         @endauth
                         @endif
