@@ -81,7 +81,7 @@
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="mr-4 nav-link" href="{{ route('login') }}">
-                                <i class="fas fa-sign-in-alt text-success fa-lg" data-toggle="tooltip" data-placement="bottom" title="Login"></i>
+                               Login
                             </a>
                         </li>
                         @endif
@@ -89,7 +89,7 @@
                         @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">
-                                <i class="fas fa-user-plus fa-lg text-success " data-toggle="tooltip" data-placement="bottom" title="Register"></i>
+                              Register
                             </a>
                         </li>
                         @endif
