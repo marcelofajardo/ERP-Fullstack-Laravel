@@ -15,11 +15,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //CRUD de Client con middleware de autenticación
 
 Route::middleware(['auth', 'admin.verify'])->group(function () {
-    Route::get('/users/clients', [ClientController::class, 'index']);
-    Route::post('/users/clients', [ClientController::class, 'store']);
-    Route::get('/users/clients/{id}', [ClientController::class, 'show']);
-    Route::put('/users/clients/{id}', [ClientController::class, 'update']);
-    Route::delete('/users/clients/{id}', [ClientController::class, 'destroy']);
+    // Route::get('/users/clients', [ClientController::class, 'index']);
+    // Route::post('/users/clients', [ClientController::class, 'store']);
+    // Route::get('/users/clients/{id}', [ClientController::class, 'show']);
+    // Route::put('/users/clients/{id}', [ClientController::class, 'update']);
+    // Route::delete('/users/clients/{id}', [ClientController::class, 'destroy']);
+    Route::resource('users/clients',ClientController::class)->names('clients');
 });
 
 

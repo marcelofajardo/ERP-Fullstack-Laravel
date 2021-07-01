@@ -15,8 +15,10 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -35,16 +37,20 @@
     <div id="app">
         <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <div class="d-flex justify-content-between align-items-center ">
+                    <i class="mr-4 fas fa-store-alt fa-2x text-success"></i>
+                    <h1>ShopERP</h1>
+                </div>
+
+
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="mr-auto navbar-nav">
+                    <ul class="ml-auto navbar-nav">
                         <li class="nav-item">
                             <a class=" nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -52,7 +58,7 @@
                         @if (Route::has('login'))
                         @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('product.index')}}">Products</a>
+                            <a class="nav-link" href="#">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
@@ -74,13 +80,17 @@
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="mr-4 nav-link" href="{{ route('login') }}">
+                               Login
+                            </a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">
+                              Register
+                            </a>
                         </li>
                         @endif
                         @else
@@ -106,11 +116,12 @@
             </div>
         </nav>
 
-        <main class="py-4 vh-100">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>
    @include('layouts.footer')
+   @yield('scripts')
 </body>
 
 </html>
