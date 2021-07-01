@@ -45,7 +45,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
 
-        $validation = Validator::make($request->all, [
+        $validation = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
             'address' => 'required|string|max:255',

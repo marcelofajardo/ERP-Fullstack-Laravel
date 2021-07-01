@@ -30,12 +30,19 @@
         .logo {
             font-family: 'Nunito', sans-serif;
         }
+
+        body {
+            height:100%;
+            position:relative;
+        }
+        
+
     </style>
 </head>
 
 <body>
     <div id="app">
-        <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -108,7 +115,7 @@
             </div>
         </nav>
 
-        <main class="py-4 vh-100">
+        <main class="py-5 ">
             @yield('content')
         </main>
     </div>
