@@ -51,8 +51,9 @@ class ProductController extends Controller
   public function show($id)
   {
       $product = Product::find($id);
-
-      return response()->json($product, 200);
+      return view('products.show',compact('product'));
+      
+      //return response()->json($product, 200);
   }
 
   /**
