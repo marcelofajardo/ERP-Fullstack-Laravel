@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('cif_nif')->nullable();
             $table->string('image')->nullable();
             $table->string('dni')->nullable();
-            $table->integer('phone')->nullable();
+            $table->string('phone')->nullable();
             $table->integer('salary')->nullable();
             $table->rememberToken();
             $table->timestamps();
