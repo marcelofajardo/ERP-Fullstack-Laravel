@@ -20,18 +20,19 @@ Route::middleware(['auth', 'admin.verify'])->group(function () {
     // Route::get('/users/clients/{id}', [ClientController::class, 'show']);
     // Route::put('/users/clients/{id}', [ClientController::class, 'update']);
     // Route::delete('/users/clients/{id}', [ClientController::class, 'destroy']);
-    Route::resource('users/clients',ClientController::class)->names('clients');
+    Route::resource('users/clients', ClientController::class)->names('clients');
+    Route::resource('users/employees', EmployeeController::class)->names('employees');
 });
 
 
 //CRUD de Employee con middleware de autenticación
 
 Route::middleware(['auth', 'admin.verify'])->group(function () {
-    Route::get('/users/employees', [EmployeeController::class, 'index']);
-    Route::post('/users/employees', [EmployeeController::class, 'store']);
-    Route::get('/users/employees/{id}', [EmployeeController::class, 'show']);
-    Route::put('/users/employees/{id}', [EmployeeController::class, 'update']);
-    Route::delete('/users/employees/{id}', [EmployeeController::class, 'destroy']);
+    Route::get('/users/employees', [EmployeeController::class, 'index'])->name('employees.index');
+    Route::post('/users/employees', [EmployeeController::class, 'create'])->name('employees.create');
+    Route::post('/users/employees', [EmployeeController::class, 'store'])->name('employees.store');
+    Route::get('/users/employees/{id}', [EmployeeController::class, 'show'])->name('employees.show');
+    Route::delete('/users/employees/{id}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
 });
 
 
