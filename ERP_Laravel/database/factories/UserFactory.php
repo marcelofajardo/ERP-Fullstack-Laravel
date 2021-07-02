@@ -62,6 +62,7 @@ class UserFactory extends Factory
         });
     }
 
+
     public function employee()
     {
         return $this->state(function (array $attributes) {
@@ -69,5 +70,5 @@ class UserFactory extends Factory
                 'type' => 'employee',
             ];
         });
-    }    
+    }
 }
