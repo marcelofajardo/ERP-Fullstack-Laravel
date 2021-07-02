@@ -66,11 +66,15 @@
 
                     <!--CAMPO sales-->
                     <div class="form-group mt-1">
-                        <label for="sales"><input name="sales" type="checkbox" id="sales" value="true" checked> Envío disponible</label>
+                        <label for="sales"><input name="sales" type="checkbox" id="sales" @php if($product->sales == 1) { echo 'checked'; } @endphp > Envío disponible</label>
                     </div>
                 </div>
-
-                <button type="submit" class="btn btn-secondary mt-4">Guardar cambios</button>
+                <button type="submit" class="btn btn-primary mt-4">Guardar cambios</button>
+            </form>
+            <br/>
+            <form method="GET" action="{{route('product.index')}}">
+                @csrf
+                <button class="btn btn-secondary" type="submit" href="">Volver</button>
             </form>
         </div>
     </div>

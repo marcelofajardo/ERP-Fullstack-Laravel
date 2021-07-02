@@ -69,7 +69,12 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-secondary mt-4">Añadir producto</button>
+                <button type="submit" class="btn btn-primary mt-4">Añadir producto</button>
+            </form>
+            <br/>
+            <form method="GET" action="{{route('product.index')}}">
+                @csrf
+                <button class="btn btn-secondary" type="submit" href="">Volver</button>
             </form>
         </div>
     </div>

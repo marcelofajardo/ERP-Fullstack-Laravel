@@ -26,18 +26,20 @@
                 </ul>
                 <div class="card-body">
                     <div class="btn-group" role="group" aria-label="">
-                        <form method="GET" action="{{route('product.index')}}">
+                        <form method="GET" action="{{ route('product.edit',  $product->id) }}">                        
                             @csrf
-                            <button class="btn btn-secondary" type="submit" href="">Volver</button>
+                            <button class="btn btn-primary" type="submit" href="">Editar</button>
                         </form>
-                        <form method="GET" action="{{ route('product.edit',  $product->id) }}">
-                            @csrf
-                            <button class="btn btn-secondary" type="submit" href="">Editar</button>
-                        </form>
+                        &nbsp;
                         <form method="POST" action="{{ route('product.destroy', $product->id) }}">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-secondary" type="submit" href="">Eliminar</button>
+                            <button class="btn btn-danger" type="submit" href="">Eliminar</button>
+                        </form>
+                        &nbsp;
+                        <form method="GET" action="{{route('product.index')}}">
+                            @csrf
+                            <button class="btn btn-secondary" type="submit" href="">Volver</button>
                         </form>
                     </div>
                 </div>
