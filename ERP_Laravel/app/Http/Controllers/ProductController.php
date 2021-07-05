@@ -7,87 +7,91 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function index()
-  {
-      $products = Product::all();
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $products = Product::all();
 
-      return response()->json($products, 200);
-  }
+        return view('products.index', compact('products'));
+    }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request)
-  {
-      $product = Product::create($request->all());
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $product = Product::create($request->all());
 
-      return response()->json([
-          'success' => true,
-          'message' => 'Product creado correctamente',
-          'user' => $product,
-      ], 201);
-  }
+        return response()->json([
+            'success' => true,
+            'message' => 'Product creado correctamente',
+            'user' => $product,
+        ], 201);
+    }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function show($id)
-  {
-      $product = Product::find($id);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $product = Product::find($id);
 
-      return response()->json($product, 200);
-  }
+        return response()->json($product, 200);
+    }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function update(Request $request, $id)
-  {
-      $product = Product::findOrFail($id);
-      $product->update($request->all());
+    public function edit($id)
+    {
+    }
 
-      return response()->json([
-          'success' => true,
-          'message' => 'Product actualizado correctamente',
-          'user' => $product,
-      ], 201);
-  }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function destroy($id)
-  {
-      $product = Product::findOrFail($id);
-      $product->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Product actualizado correctamente',
+            'user' => $product,
+        ], 201);
+    }
 
-      return response()->json([
-          'success' => true,
-          'message' => 'Product eliminado correctamente',
-      ], 200);
-  }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Product eliminado correctamente',
+        ], 200);
+    }
 }
