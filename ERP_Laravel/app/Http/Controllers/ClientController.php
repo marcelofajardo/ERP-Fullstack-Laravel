@@ -62,7 +62,7 @@ class ClientController extends Controller
     Mail::send('welcome_mail', $email_data, function ($message) use ($email_data) {
         $message->to($email_data['email'], $email_data['name'])
             ->subject('Welcome to ShopERP')
-            ->from('info@ShopERP.com', 'ShopERP');
+            ->from('laraveldemo249@gmail.com', 'ShopERP');
     });
 
      return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
