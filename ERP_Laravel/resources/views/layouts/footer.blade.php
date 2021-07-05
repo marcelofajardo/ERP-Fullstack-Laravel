@@ -1,4 +1,4 @@
-<footer class="p-3 mt-5 bg-warning font-weight-light">
+<footer class="p-3 mt-5 bg-warning font-weight-light" style="position:fixed; bottom:0px; left: 0px; width: 100%; height: 5%;">
     <div class="row">
         <div class="col-md-4">
             <p class="text-center"><i class="fas fa-info-circle"></i> IT Project-Barcelona Activa</p>
