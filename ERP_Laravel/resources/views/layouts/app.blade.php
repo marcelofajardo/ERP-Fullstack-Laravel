@@ -15,10 +15,8 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,12 +28,19 @@
         .logo {
             font-family: 'Nunito', sans-serif;
         }
+
+        body {
+            height:100%;
+            position:relative;
+        }
+        
+
     </style>
 </head>
 
 <body>
     <div id="app">
-        <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -54,7 +59,7 @@
                         @if (Route::has('login'))
                         @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
+                            <a class="nav-link" href="{{route('product.index')}}">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
@@ -63,7 +68,7 @@
                             <a class="nav-link " href="#">Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Employees</a>
+                            <a class="nav-link " href="{{ route('employees.index') }}">Employees</a>
                         </li>
                         @endauth
                         @endif
@@ -108,7 +113,7 @@
             </div>
         </nav>
 
-        <main class="py-4 vh-100">
+        <main class="py-5 ">
             @yield('content')
         </main>
     </div>
