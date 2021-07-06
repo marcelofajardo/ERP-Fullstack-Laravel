@@ -40,7 +40,7 @@
 
 <body>
 
-    <div id="app">
+
         <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
             <div class="d-flex justify-content-between align-items-center">
 
@@ -77,7 +77,7 @@
                         @endif
                         <!-- ends -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                     </ul>
-                    <ul class="navbar-nav ml-5">
+                    <ul class="ml-5 navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Languages
@@ -97,7 +97,6 @@
                     <ul class="ml-auto navbar-nav">
                         <!-- Authentication Links -->
                         @guest
-
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -132,10 +131,8 @@
 
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+
+
 
 
         <main class="py-5 ">
