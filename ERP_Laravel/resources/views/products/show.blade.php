@@ -9,8 +9,8 @@
                     <img src="{{$product->image}}" class="mx-auto mt-2 card-img-top w-25 d-block rounded-circle " alt="...">
                  <div class="card-body">
                     <p class="card-text">{{$product->name}}</p>
-                    <p class="card-text">{{$product->brand}}</p>
-                    <p class="card-text">{{$product->descripcion}}</p>
+                    <p class="card-text">{{$product->description}}</p>
+                    <p class="card-text">Marca: {{$product->brand}}</p>
                     <p class="card-text">Price: {{$product->price}} €</p>
                     <p class="card-text">Stock {{$product->stock}}</p>
                  </div>
