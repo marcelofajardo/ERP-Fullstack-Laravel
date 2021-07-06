@@ -46,7 +46,7 @@ class ProductController extends Controller
 
         return redirect()->route('product.index');
     }
-
+    
   /**
    * Display the specified resource.
    *
