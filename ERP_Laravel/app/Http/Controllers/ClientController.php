@@ -21,14 +21,15 @@ class ClientController extends Controller
    */
   public function index()
   {
-   $clients = User::where('type', 'client')->get();
+    $clients = User::where('type', 'client')->get();
 
 
 
-  return view('clients.index',compact('clients'));
+    return view('clients.index', compact('clients'));
   }
-  public function create(){
-      return view('clients.create');
+  public function create()
+  {
+    return view('clients.create');
   }
 
 
@@ -42,17 +43,16 @@ class ClientController extends Controller
   {
 
     $validated = $request->validate([
-        'name' => 'required|max:255',
-        'email' => 'required|email',
-        'address' => 'required|string|max:255',
-        'cif_nif' => 'required|string|max:12',
-        'type' => 'required',
-        'image' => 'required|string|max:255',
-        'password' => 'required|min:8'
+      'name' => 'required|max:255',
+      'email' => 'required|email',
+      'address' => 'required|string|max:255',
+      'cif_nif' => 'required|string|max:12',
+      'type' => 'required',
+      'image' => 'required|string|max:255',
+      'password' => 'required|min:8'
     ]);
-      User::create($request->all());
+    User::create($request->all());
 
-    // email data
     $email_data = array(
         'name' => $request->name,
         'email' => $request->email,
@@ -67,17 +67,14 @@ class ClientController extends Controller
 
      return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
   }
-
-  /**
-   * Display the specified resource.
    *
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
   public function show($id)
   {
-     $user = User::find($id);
-     return view('clients.show',compact('user'));
+    $user = User::find($id);
+    return view('clients.show', compact('user'));
   }
 
 
@@ -85,7 +82,7 @@ class ClientController extends Controller
   public function edit($id)
   {
     $user = User::find($id);
-    return view('clients.edit',compact('user'));
+    return view('clients.edit', compact('user'));
   }
 
 
@@ -99,18 +96,18 @@ class ClientController extends Controller
    */
   public function update(Request $request, $id)
   {
-     $user =User::findOrFail($id);
-     $validated = $request->validate([
-        'name' => 'required|max:255',
-        'email' => 'required|email',
-        'address' => 'required|string|max:255',
-        'cif_nif' => 'required|string|max:12',
-        'type' => 'required',
-        'image' => 'required|string|max:255',
-        'password' => 'required|min:8'
+    $user = User::findOrFail($id);
+    $validated = $request->validate([
+      'name' => 'required|max:255',
+      'email' => 'required|email',
+      'address' => 'required|string|max:255',
+      'cif_nif' => 'required|string|max:12',
+      'type' => 'required',
+      'image' => 'required|string|max:255',
+      'password' => 'required|min:8',
     ]);
     $user->update($request->all());
-    return redirect()->route('clients.index')->with("success"," Cliente Actualizado" );
+    return redirect()->route('employees.index')->with("success", "Cliente Actualizado");
   }
 
 
@@ -122,8 +119,8 @@ class ClientController extends Controller
    */
   public function destroy($id)
   {
-    $user =User::findOrFail($id);
+    $user = User::findOrFail($id);
     $user->delete();
-    return redirect()->route('clients.index')->with("success"," Cliente Eliminado" );
+    return redirect()->route('clients.index')->with("success", " Cliente Eliminado");
   }
 }

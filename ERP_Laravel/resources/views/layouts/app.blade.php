@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{  app()->getLocale() }}">
 
 <head>
     <meta charset="utf-8">
@@ -15,10 +15,8 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,31 +28,41 @@
         .logo {
             font-family: 'Nunito', sans-serif;
         }
+
+        body {
+            height:100%;
+            position:relative;
+        }
+
+
     </style>
 </head>
 
 <body>
-    <div id="app">
+
+
         <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+            <div class="d-flex justify-content-between align-items-center">
+
+
+                <i class=" fas fa-store-alt fa-2x text-success"></i>
+
+                <h1 class="ml-3">ShopERP</h1>
+            </div>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="mr-auto navbar-nav">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="ml-auto navbar-nav">
                         <li class="nav-item">
-                            <a class=" nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="ml-5 nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <!-- starts -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                         @if (Route::has('login'))
                         @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
+                            <a class="nav-link" href="">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
@@ -63,13 +71,28 @@
                             <a class="nav-link " href="#">Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Employees</a>
+                            <a class="nav-link " href="{{ route('employees.index') }}">Employees</a>
                         </li>
                         @endauth
                         @endif
                         <!-- ends -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                     </ul>
+                    <ul class="ml-5 navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Languages
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ url('locale/en') }}">English</a>
+                                <a class="dropdown-item" href="{{ url('locale/ca') }}">Catalan</a>
 
+                                <a class="dropdown-item" href="{{ url('locale/es') }}">Spanish</a>
+                              </div>
+                        </li>
+
+
+                    </ul>
+                    <p class="m-auto ">{{ App::getLocale() }}</p>
                     <!-- Right Side Of Navbar -->
                     <ul class="ml-auto navbar-nav">
                         <!-- Authentication Links -->
@@ -105,13 +128,17 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+
         </nav>
 
-        <main class="py-4 vh-100">
+
+
+
+
+        <main class="py-5 ">
             @yield('content')
         </main>
-    </div>
+
    @include('layouts.footer')
 </body>
 
