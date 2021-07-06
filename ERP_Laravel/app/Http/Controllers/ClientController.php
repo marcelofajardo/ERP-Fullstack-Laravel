@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Mail;
 
 
 class ClientController extends Controller
@@ -52,11 +53,20 @@ class ClientController extends Controller
     ]);
     User::create($request->all());
 
-    return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
-  }
+    $email_data = array(
+        'name' => $request->name,
+        'email' => $request->email,
+    );
 
-  /**
-   * Display the specified resource.
+    // send email with the template
+    Mail::send('welcome_mail', $email_data, function ($message) use ($email_data) {
+        $message->to($email_data['email'], $email_data['name'])
+            ->subject('Welcome to ShopERP')
+            ->from('laraveldemo249@gmail.com', 'ShopERP');
+    });
+
+     return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
+  }
    *
    * @param  int  $id
    * @return \Illuminate\Http\Response
