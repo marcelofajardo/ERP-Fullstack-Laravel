@@ -10,6 +10,11 @@ use App\Http\Controllers\ProductController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
 
 //recuperado del proyecto API anterior
 //CRUD de Client con middleware de autenticación
