@@ -62,6 +62,14 @@ class ProductController extends Controller
         return view('admin.products.product', compact('product'));
     }
 
+    public function showPublic($id)
+    {
+        $product = Product::find($id);
+        return view('products.show', compact('product'));
+
+        //return response()->json($product, 200);
+    }
+
     public function edit($id)
     {
 

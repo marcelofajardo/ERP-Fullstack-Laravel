@@ -8,7 +8,7 @@
         
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           @foreach ($products as $product)
-          <div class="card  ">
+          <div class="card my-2 px-1">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
               <img src="{{ $product->image }}" class="img-fluid" />
               <a href="#!">
@@ -18,14 +18,18 @@
             
             <div class="card-body">
               <h4 class="card-title">{{ $product->name }}</h4>
-              <h5 class="card-subtitle">{{ $product->brand}}</h5>
+              <h5 class="card-subtitle text-capitalize">{{ $product->brand}}</h5>
               <p class="card-text">
                 {{ $product->description}}
               </p>
-            
-              <button type="button" class="btn btn-primary">Button</button>
+              <div class="mb-0">
+                <a type="button" class="btn btn-primary btn-lg" href="{{ route('product.showPublic',  $product->id) }}">Details</a>
+                <a type="button" class="btn btn-warning btn-lg float-right" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a>
+              </div>
             </div>
-            <div class="card-footer">2 days ago</div>
+            <div class="card-footer">
+              <p class="text-right">{{ $product->price }} €</p>
+            </div>
           </div>
         @endforeach
       </div>

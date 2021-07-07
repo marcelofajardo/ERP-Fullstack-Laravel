@@ -10,7 +10,7 @@ use App\Http\Controllers\ProductController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('locale/{locale}', function ($locale){
+Route::get('locale/{locale}', function ($locale) {
     Session::put('locale', $locale);
     return redirect()->back();
 });
@@ -44,7 +44,7 @@ Route::middleware(['auth', 'admin.verify'])->group(function () {
 //CRUD de Product con middleware de autenticación excepto get products
 
 Route::get('/products', [ProductController::class, 'publicIndex'])->name('product.publicIndex');
-Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/products/{id}', [ProductController::class, 'showPublic'])->name('product.showPublic');
 Route::middleware(['auth', 'admin.verify'])->group(function () {
     Route::get('/admin/products', [ProductController::class, 'index'])->name('product.index');
     Route::get('/create/product', [ProductController::class, 'create'])->name('product.create');
