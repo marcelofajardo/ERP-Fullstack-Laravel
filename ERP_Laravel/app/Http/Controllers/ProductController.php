@@ -46,13 +46,22 @@ class ProductController extends Controller
 
         return redirect()->route('product.index');
     }
+    
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function show($id)
+  {
+      $product = Product::find($id);
+ 
+      return view('products.show',compact('product'));
+      
+      //return response()->json($product, 200);
+  }
 
-    public function show($id)
-    {
-        $product = Product::find($id);
-
-        return view('products.product', compact('product'));
-    }
 
     public function edit($id)
     {
