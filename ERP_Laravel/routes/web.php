@@ -38,9 +38,10 @@ Route::middleware(['auth', 'admin.verify'])->group(function () {
 
 //CRUD de Product con middleware de autenticación excepto get products
 
-Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+Route::get('/products', [ProductController::class, 'publicIndex'])->name('product.publicIndex');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
 Route::middleware(['auth', 'admin.verify'])->group(function () {
+    Route::get('/admin/products', [ProductController::class, 'index'])->name('product.index');
     Route::get('/create/product', [ProductController::class, 'create'])->name('product.create');
     Route::post('/products', [ProductController::class, 'store'])->name('product.store');
     Route::get('/edit/product/{id}', [ProductController::class, 'edit'])->name('product.edit');
