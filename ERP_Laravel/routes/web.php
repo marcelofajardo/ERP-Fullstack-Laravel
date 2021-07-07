@@ -54,4 +54,8 @@ Route::middleware(['auth', 'admin.verify'])->group(function () {
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 });
 
-Route::resource('/cart', CartController::class);
+/* Route::resource('/cart', CartController::class); */
+Route::get('/cart',  [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+Route::post('/cart/empty', [CartController::class, 'delete'])->name('cart.delete');
+Route::delete('/cart/{cart}', [CartController::class, 'destroy'])->name('cart.destroy');

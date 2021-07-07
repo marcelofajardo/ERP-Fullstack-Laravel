@@ -1,15 +1,32 @@
 @extends('layouts.app')
 @section('content')
+@if (Session::has('success'))
+    <div class="alert alert-success" role="alert">
+        {{Session::get('success')}}
+    </div>    
+@endif
 <div class="container">
+    <div class="row">
+        <div class="col-1">
+            <h3>{{ __('cart.cart') }}</h3>
+        </div>
+        <div class="col-10">
+            <form method="POST" action="{{ route('cart.delete') }}">
+                @csrf
+                <button class="btn btn-primary" type="submit" href="">{{ __('cart.action_clear') }}</button>
+            </form>
+        </div>
+    </div>
+    <br/>
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th sc ope="col">#ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Atributos</th>
-                <th scope="col">Acción</th>
+                <th scope="col">{{ __('cart.id') }}</th>
+                <th scope="col">{{ __('cart.name') }}</th>
+                <th scope="col">{{ __('cart.price') }}</th>
+                <th scope="col">{{ __('cart.quantity') }}</th>
+                <th scope="col">{{ __('cart.attributes') }}</th>
+                <th scope="col">{{ __('cart.action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +46,7 @@
                     <form method="POST" action="{{route('cart.destroy',$item->id)}}">
                         @method('DELETE')
                         @csrf
-                        <button type="submit">Eliminar</button>
+                        <button type="submit">{{ __('cart.action_delete') }}</button>
                     </form>
                 </th>            
             </tr>
@@ -40,14 +57,14 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Sub Total</th>
-                <th scope="col">Total</th>
+                <th scope="col">{{ __('cart.quantity') }}</th>
+                <th scope="col">{{ __('cart.sub_total') }}</th>
+                <th scope="col">{{ __('cart.total') }}</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">{{Cart::getTotalQuantity()}}</th>
+                <th scope="row">{{ Cart::getTotalQuantity() }}</th>
                 <th scope="row">{{ number_format(Cart::getSubTotal(), 2) }} €</th>
                 <th scope="row">{{ number_format(Cart::getTotal(), 2) }} € </th>
             </tr>
@@ -58,13 +75,13 @@
             <div class="col" style="text-align:right;">
                 <form method="GET" action="{{route('product.index')}}">
                     @csrf
-                    <button class="btn btn-primary" type="submit" href="">Volver a Productos</button>
+                    <button class="btn btn-primary" type="submit" href="">{{ __('cart.back_product') }}</button>
                 </form>            
             </div>
             <div class="col" style="text-align:left;">
                 <form method="GET" action="{{ url('/') }}">
                     @csrf
-                    <button class="btn btn-primary" type="submit" href="">Volver a Home</button>
+                    <button class="btn btn-primary" type="submit" href="">{{ __('cart.back_home') }}</button>
                 </form>
             </div>
         </div>    

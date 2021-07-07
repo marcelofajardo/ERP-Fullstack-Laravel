@@ -17,17 +17,7 @@ class CartController extends Controller
     public function index()
     {
         //
-        return view('cart.home');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('cart.index');
     }
 
     /**
@@ -47,33 +37,11 @@ class CartController extends Controller
                 'price' =>$product->price,
                 'quantity' => $request->quantity?$request->quantity:1,
                 'attributes' => array(
-                    'Marca' => $product->brand,
+                    __('cart.brand') => $product->brand,
                 )
             ));
         }
-        return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($cart)
-    {
-        return view('cart.home');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect()->back()->with('success', __('cart.action_add_message'));
     }
 
     /**
@@ -98,7 +66,7 @@ class CartController extends Controller
         ));
         */
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -110,5 +78,11 @@ class CartController extends Controller
         Cart::remove($cart);
         return back();
     }
+
+    public function delete() 
+    {
+        Cart::clear();
+        return view('cart.index');
+    }    
 
 }

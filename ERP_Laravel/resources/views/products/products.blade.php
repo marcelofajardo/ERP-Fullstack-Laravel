@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <style>
     .botonMenu {
@@ -8,6 +7,11 @@
     }
 </style>
 <div class="container">
+    @if (Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{Session::get('success')}}
+        </div>    
+    @endif
     <!--
     <div class="row justify-content-center">
         <div class="col-md-8">

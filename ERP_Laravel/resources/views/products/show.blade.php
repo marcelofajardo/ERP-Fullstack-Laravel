@@ -1,6 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
+@if (Session::has('success'))
+    <div class="alert alert-success" role="alert">
+        {{Session::get('success')}}
+    </div>    
+@endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -14,16 +18,22 @@
                     <p class="card-text">Price: {{$product->price}} €</p>
                     <p class="card-text">Stock {{$product->stock}}</p>
                  </div>
-
                 <div class="card-body">
-                    <label for="product">Añadir a la cesta</label>
-                    <input type="number" id="stock" name="stock"
-                    min="0" max="{{$product->stock}}">
+                    <form method="POST" action="{{ route('cart.store') }}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}"/>
+                        {{ __('cart.quantity') }} <input type="number" name="quantity" min="0" max="{{$product->stock}}"/>
+                        <br/><br/>
+                        <button class="btn btn-success" type="submit" href="" data-toggle="tooltip" data-placement="top" title="{{ __('cart.action_add') }}"><i class="fas fa-cart-plus"></i> {{ __('cart.action_add') }}</button>
+                    </form>
                 </div>
-
+                <div>
+                    <a class="btn btn-info" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart"></i> {{ __('cart.show_cart') }}</a>
+                </div>  
+                <br/>
                 <div class="col-lg-8 offset-lg-2">
                     <button type="submit" class="btn btn-warning">Comprar</button>
-                </div>  
+                </div>
             </div> 
         </div>
     </div>
