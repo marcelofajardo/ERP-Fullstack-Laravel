@@ -62,7 +62,7 @@
                         @if (Route::has('login'))
                         @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="">Products</a>
+                            <a class="nav-link" href="{{ route('product.index')}}">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clients.index')}}">Clients</a>
@@ -110,7 +110,7 @@
                         @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cart.show', 0) }}" data-toggle="tooltip" data-placement="bottom" title="Ver Carrito"><i class="fas fa-shopping-cart"></i> Carrito</a>
+                            <a class="nav-link" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart"></i> {{ __('cart.cart') }}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
