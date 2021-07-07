@@ -69,6 +69,11 @@
                                     @method('DELETE')
                                     <button class="botonMenu" type="submit" href=""><i class="fas fa-trash-alt fa-lg text-danger"></i></button>
                                 </form>
+                                <form method="POST" action="{{ route('cart.store') }}">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $product->id }}"/>
+                                    <button class="botonMenu" type="submit" href=""><i class="fas fa-cart-plus"></i></button>
+                                </form>
                             </div>
                         </td>
                     </tr>

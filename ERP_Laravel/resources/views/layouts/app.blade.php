@@ -62,13 +62,13 @@
                             <a class="nav-link" href="{{route('product.index')}}">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
+                            <a class="nav-link" href="{{ route('clients.index')}}">Clients</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Orders</a>
+                            <a class="nav-link" href="#">Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ route('employees.index') }}">Employees</a>
+                            <a class="nav-link" href="{{ route('employees.index') }}">Employees</a>
                         </li>
                         @endauth
                         @endif
@@ -91,6 +91,9 @@
                         </li>
                         @endif
                         @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('cart.show', 0) }}" data-toggle="tooltip" data-placement="bottom" title="Ver Carrito"><i class="fas fa-shopping-cart"></i> Carrito</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}

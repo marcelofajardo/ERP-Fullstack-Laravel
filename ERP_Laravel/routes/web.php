@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 Auth::routes();
 
@@ -47,3 +48,5 @@ Route::middleware(['auth', 'admin.verify'])->group(function () {
     Route::put('/products/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 });
+
+Route::resource('/cart', CartController::class);

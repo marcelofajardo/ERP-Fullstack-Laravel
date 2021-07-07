@@ -26,6 +26,12 @@
                 </ul>
                 <div class="card-body">
                     <div class="btn-group" role="group" aria-label="">
+                        <form method="POST" action="{{ route('cart.store') }}">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $product->id }}"/>
+                            <button class="btn btn-success" type="submit" href="" data-toggle="tooltip" data-placement="top" title="Añadir al Carrito"><i class="fas fa-cart-plus"></i></button>
+                        </form>
+                        &nbsp;                    
                         <form method="GET" action="{{ route('product.edit',  $product->id) }}">                        
                             @csrf
                             <button class="btn btn-primary" type="submit" href="">Editar</button>
