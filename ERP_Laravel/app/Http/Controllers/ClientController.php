@@ -67,7 +67,8 @@ class ClientController extends Controller
 
      return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
   }
-   *
+
+   /**
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
