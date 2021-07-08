@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('total_paid');
             $table->text('comments')->nullable();
             $table->unsignedBigInteger('bill_id');
-            $table->unsignedBigInteger('ship_id');
+            $table->unsignedBigInteger('shipping_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('bill_id')->references('id')->on('bills');
             $table->foreign('shipping_id')->references('id')->on('shippings');
