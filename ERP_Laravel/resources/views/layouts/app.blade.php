@@ -48,6 +48,11 @@
                 <i class=" fas fa-store-alt fa-2x text-success"></i>
 
                 <h1 class="ml-3">ShopERP</h1>
+                @guest
+                
+                    <a class="nav-link" style="text-decoration:none;" href="{{ route('product.publicIndex') }}"><h5>{{ __('Products') }}</h5></a>
+                
+                @endguest
             </div>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -115,9 +120,7 @@
                     <ul class="ml-auto navbar-nav">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('product.publicIndex') }}">{{ __('Products') }}</a>
-                        </li>
+                        
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
