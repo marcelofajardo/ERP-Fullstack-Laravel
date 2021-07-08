@@ -63,7 +63,7 @@
                         @auth
                         @if(Auth::user()->type === 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="">Products</a>
+                            <a class="nav-link" href="{{ route('product.index')}}">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
@@ -115,6 +115,9 @@
                     <ul class="ml-auto navbar-nav">
                         <!-- Authentication Links -->
                         @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('product.publicIndex') }}">{{ __('Products') }}</a>
+                        </li>
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

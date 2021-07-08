@@ -47,6 +47,7 @@ Route::get('/products', [ProductController::class, 'publicIndex'])->name('produc
 Route::get('/products/{id}', [ProductController::class, 'showPublic'])->name('product.showPublic');
 Route::middleware(['auth', 'admin.verify'])->group(function () {
     Route::get('/admin/products', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/admin/products/{id}', [ProductController::class, 'show'])->name('product.show');
     Route::get('/create/product', [ProductController::class, 'create'])->name('product.create');
     Route::post('/products', [ProductController::class, 'store'])->name('product.store');
     Route::get('/edit/product/{id}', [ProductController::class, 'edit'])->name('product.edit');
