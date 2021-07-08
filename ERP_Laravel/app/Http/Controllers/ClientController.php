@@ -54,20 +54,20 @@ class ClientController extends Controller
     User::create($request->all());
 
     $email_data = array(
-        'name' => $request->name,
-        'email' => $request->email,
+      'name' => $request->name,
+      'email' => $request->email,
     );
 
     // send email with the template
     Mail::send('welcome_mail', $email_data, function ($message) use ($email_data) {
-        $message->to($email_data['email'], $email_data['name'])
-            ->subject('Welcome to ShopERP')
-            ->from('laraveldemo249@gmail.com', 'ShopERP');
+      $message->to($email_data['email'], $email_data['name'])
+        ->subject('Welcome to ShopERP')
+        ->from('laraveldemo249@gmail.com', 'ShopERP');
     });
 
-     return redirect()->route('clients.index')->with('success', 'Cliente Creado');;
+    return redirect()->route('clients.index')->with('success', 'Cliente Creado');
   }
-   *
+  /**
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */

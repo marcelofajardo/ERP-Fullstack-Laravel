@@ -7,15 +7,22 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+
     public function index()
     {
         $products = Product::all();
-        return view('products.products', compact('products'));
+        return view('admin.products.products', compact('products'));
+    }
+
+    public function publicIndex()
+    {
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 
     public function create()
     {
-        return view('products.create');
+        return view('admin.products.create');
     }
 
     public function store(Request $request)
@@ -46,28 +53,29 @@ class ProductController extends Controller
 
         return redirect()->route('product.index');
     }
-    
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function show($id)
-  {
-      $product = Product::find($id);
- 
-      return view('products.show',compact('product'));
-      
-      //return response()->json($product, 200);
-  }
 
+    public function show($id)
+    {
+        $product = Product::find($id);
+
+
+        return view('admin.products.product', compact('product'));
+    }
+
+    public function showPublic($id)
+    {
+        $product = Product::find($id);
+        return view('products.show', compact('product'));
+
+        //return response()->json($product, 200);
+    }
 
     public function edit($id)
     {
+
         $product = Product::findOrFail($id);
-        
-        return view('products.edit', compact('product'));
+
+        return view('admin.products.edit', compact('product'));
     }
 
     public function update(Request $request, $id)
@@ -103,6 +111,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
+
 
         return redirect()->route('product.index');
     }
