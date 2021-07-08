@@ -41,17 +41,12 @@
 <body>
 
 
-        <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="d-flex justify-content-between align-items-center">
-
-
                 <i class=" fas fa-store-alt fa-2x text-success"></i>
-
                 <h1 class="ml-3">ShopERP</h1>
                 @guest
-                
                     <a class="nav-link" style="text-decoration:none;" href="{{ route('product.publicIndex') }}"><h5>{{ __('Products') }}</h5></a>
-                
                 @endguest
             </div>
 
@@ -71,15 +66,15 @@
                             <a class="nav-link" href="{{ route('product.index')}}">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
+                            <a class="nav-link" href="{{ route('clients.index')}}">Clients</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Orders</a>
+                            <a class="nav-link" href="#">Orders</a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ route('employees.index') }}">Employees</a>
+                            <a class="nav-link" href="{{ route('employees.index') }}">Employees</a>
                         </li>
                         @elseif(Auth::user()->type ==='client')
                         <li class="nav-item">
@@ -113,14 +108,16 @@
                               </div>
                         </li>
 
-
                     </ul>
                     <p class="m-auto ">{{ App::getLocale() }}</p>
                     <!-- Right Side Of Navbar -->
                     <ul class="ml-auto navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" style="text-decoration:none;" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart text-info"></i> <h5>{{ __('cart.cart') }}</h5></a>
+
+                        </li>
                         <!-- Authentication Links -->
-                        @guest
-                        
+                        @guest                        
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -152,18 +149,10 @@
                         @endguest
                     </ul>
                 </div>
-
         </nav>
-
-
-
-
-
         <main class="py-5 ">
             @yield('content')
         </main>
-
-   @include('layouts.footer')
+    @include('layouts.footer')
 </body>
-
 </html>
