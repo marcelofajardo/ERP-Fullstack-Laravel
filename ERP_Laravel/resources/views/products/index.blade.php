@@ -25,7 +25,7 @@
                 </p>
                 <div class="mb-0 mt-auto">
                   <a class="stretched-link" href="{{ route('product.showPublic',  $product->id) }}"></a>
-                  <a type="button" class="btn btn-warning btn-lg btn-block shop-button"  href="#"><i class="fas fa-shopping-cart"></i>&nbsp;{{__("publicProducts.Add to cart")}}</a>
+                  <a type="button" style="z-index: 1; position:relative;"class="btn btn-warning btn-lg btn-block shop-button"  href="#"><i class="fas fa-shopping-cart"></i>&nbsp;{{__("publicProducts.Add to cart")}}</a>
                 </div>
               </div>
               <div class="card-footer">
