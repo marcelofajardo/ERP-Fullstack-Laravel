@@ -7,11 +7,6 @@
     }
 </style>
 <div class="container">
-    @if (Session::has('success'))
-        <div class="alert alert-success" role="alert">
-            {{Session::get('success')}}
-        </div>    
-    @endif
     <!--
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -72,11 +67,6 @@
                                     @csrf
                                     @method('DELETE')
                                     <button class="botonMenu" type="submit" href=""><i class="fas fa-trash-alt fa-lg text-danger"></i></button>
-                                </form>
-                                <form method="POST" action="{{ route('cart.store') }}">
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $product->id }}"/>
-                                    <button class="botonMenu" type="submit" href=""><i class="fas fa-cart-plus"></i></button>
                                 </form>
                             </div>
                         </td>

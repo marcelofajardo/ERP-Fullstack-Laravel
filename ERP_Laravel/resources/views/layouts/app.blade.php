@@ -41,17 +41,12 @@
 <body>
 
 
-        <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="d-flex justify-content-between align-items-center">
-
-
                 <i class=" fas fa-store-alt fa-2x text-success"></i>
-
                 <h1 class="ml-3">ShopERP</h1>
                 @guest
-                
                     <a class="nav-link" style="text-decoration:none;" href="{{ route('product.publicIndex') }}"><h5>{{ __('Products') }}</h5></a>
-                
                 @endguest
             </div>
 
@@ -113,14 +108,16 @@
                               </div>
                         </li>
 
-
                     </ul>
                     <p class="m-auto ">{{ App::getLocale() }}</p>
                     <!-- Right Side Of Navbar -->
                     <ul class="ml-auto navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" style="text-decoration:none;" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart text-info"></i> <h5>{{ __('cart.cart') }}</h5></a>
+
+                        </li>
                         <!-- Authentication Links -->
-                        @guest
-                        
+                        @guest                        
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -133,9 +130,6 @@
                         </li>
                         @endif
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart"></i> {{ __('cart.cart') }}</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}   <span class="ml-2"> {{ Auth::user()->type }} </span>
@@ -155,18 +149,10 @@
                         @endguest
                     </ul>
                 </div>
-
         </nav>
-
-
-
-
-
         <main class="py-5 ">
             @yield('content')
         </main>
-
-   @include('layouts.footer')
+    @include('layouts.footer')
 </body>
-
 </html>

@@ -24,16 +24,16 @@
                         <input type="hidden" name="id" value="{{ $product->id }}"/>
                         {{ __('cart.quantity') }} <input type="number" name="quantity" min="0" max="{{$product->stock}}"/>
                         <br/><br/>
-                        <button class="btn btn-success" type="submit" href="" data-toggle="tooltip" data-placement="top" title="{{ __('cart.action_add') }}"><i class="fas fa-cart-plus"></i> {{ __('cart.action_add') }}</button>
+                        <button type="submit" style="z-index: 1; position:relative;" class="btn btn-warning btn-lg btn-block shop-button"><i class="fas fa-shopping-cart"></i>&nbsp;{{__("cart.action_add")}}</a>
                     </form>
                 </div>
-                <div>
-                    <a class="btn btn-info" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart"></i> {{ __('cart.show_cart') }}</a>
+                <div class="card-body">
+                    <a class="btn btn-info btn-lg btn-block" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart"></i> {{ __('cart.show_cart') }}</a>
                 </div>  
-                <br/>
-                <div class="col-lg-8 offset-lg-2">
+                <div class="card-body">
                     <button type="submit" class="btn btn-warning">Comprar</button>
                 </div>
+                
             </div> 
         </div>
     </div>

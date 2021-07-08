@@ -73,7 +73,7 @@
     <div class="container">
         <div class="row">
             <div class="col" style="text-align:right;">
-                <form method="GET" action="{{route('product.index')}}">
+                <form method="GET" action="{{route('product.publicIndex')}}">
                     @csrf
                     <button class="btn btn-primary" type="submit" href="">{{ __('cart.back_product') }}</button>
                 </form>            
