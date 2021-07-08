@@ -39,7 +39,7 @@
                 <td>{{ number_format($item->quantity,0) }}</td>
                 <td>
                     @foreach ($item->attributes as $key => $attribute)
-                        {{$key}}: {{$attribute}}.
+                        {{ __('cart.'.$key) }}: {{$attribute}}.
                     @endforeach
                 </td>
                 <th scope="row">
