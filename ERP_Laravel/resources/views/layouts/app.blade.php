@@ -101,10 +101,9 @@
                                 Languages
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('locale/en') }}">English</a>
-                                <a class="dropdown-item" href="{{ url('locale/ca') }}">Catalan</a>
-
-                                <a class="dropdown-item" href="{{ url('locale/es') }}">Spanish</a>
+                               <a class="dropdown-item" href="{{ url('locale/ca') }}">{{__("messages.Catalan")}}</a>
+                                <a class="dropdown-item" href="{{ url('locale/en') }}">{{__("messages.English")}}</a>
+                                <a class="dropdown-item" href="{{ url('locale/es') }}">{{__("messages.Spanish")}}</a>
                               </div>
                         </li>
 
