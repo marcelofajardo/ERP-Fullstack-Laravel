@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2>Our products</h2>
+    <h2>{{__("publicProducts.Our Products")}}</h2>
     <div class="mt-5 row">
         
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -23,8 +23,8 @@
                 {{ $product->description}}
               </p>
               <div class="mb-0">
-                <a type="button" class="btn btn-primary btn-lg" href="{{ route('product.showPublic',  $product->id) }}">Details</a>
-                <a type="button" class="btn btn-warning btn-lg float-right" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;Add to cart</a>
+                <a type="button" class="btn btn-primary btn-lg" href="{{ route('product.showPublic',  $product->id) }}">{{__("publicProducts.Details")}}</a>
+                <a type="button" class="btn btn-warning btn-lg float-right" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;{{__("publicProducts.Add to cart")}}</a>
               </div>
             </div>
             <div class="card-footer">
