@@ -61,6 +61,7 @@
                         <!-- starts -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                         @if (Route::has('login'))
                         @auth
+                        @if(Auth::user()->type === 'admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('product.index')}}">Products</a>
                         </li>
@@ -70,9 +71,26 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Orders</a>
                         </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('employees.index') }}">Employees</a>
                         </li>
+                        @elseif(Auth::user()->type ==='client')
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Orders</a>
+                        </li>
+                        @elseif(Auth::user()->type === 'employee')
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Orders</a>
+                        </li>
+                        @endif
                         @endauth
                         @endif
                         <!-- ends -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
@@ -114,7 +132,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name }}   <span class="ml-2"> {{ Auth::user()->type }} </span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
