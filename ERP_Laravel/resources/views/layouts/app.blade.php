@@ -115,6 +115,9 @@
                     <ul class="ml-auto navbar-nav">
                         <!-- Authentication Links -->
                         @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('product.publicIndex') }}">{{ __('Products') }}</a>
+                        </li>
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
