@@ -134,7 +134,7 @@
                     </ul>
                 </div>
                 <ul class="ml-5 navbar-nav">
-                        <a href="{{ url('locale/ca') }}" class="btn btn-outline-dark .btn-primary:active">CAT</a>
+                        <a href="{{ url('locale/ca') }}" class="btn btn-outline-dark>CAT</a>
                         <a href="{{ url('locale/en') }}" class="btn btn-outline-dark">EN</a>
                         <a href="{{ url('locale/es') }}" class="btn btn-outline-dark">CAST</a>
                     </ul>
