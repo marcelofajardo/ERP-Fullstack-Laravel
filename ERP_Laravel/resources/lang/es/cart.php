@@ -12,12 +12,22 @@
 */
 
 return [
+    'home' => 'Inicio',
+    'products' => 'Productos',
+    'close' => 'Cierra',
+    'cart_products' => 'Producto(s) en la Cesta',
+    'cart_no_products' => 'NO Producto(s) en la Cesta', 
+    'continue_shopping' => 'Continuar Comprando',
+    'with_discount' => 'Con descuento',
+    'proceed_checkout' => 'Realizar Checkout',
+    'checkout' => 'Checkout',
     'cart'   => 'Carrito',
     'show_cart' => 'Ver Carrito',
     'id' => '#ID',
     'name' => 'Nombre',
     'price' => 'Precio',
     'quantity' => 'Cantidad',
+    'qty' => 'Cant.',
     'attributes' => 'Atributos',
     'brand' => 'Marca',
     'action' => 'Acción',
@@ -30,4 +40,5 @@ return [
     'action_update' => 'Modifica',
     'action_clear' => 'Vaciar Carrito',
     'action_add_message' => 'Producto añadido al carrito.',
+    'cart_empty' => 'Tu Carrito esta vacío',
 ];

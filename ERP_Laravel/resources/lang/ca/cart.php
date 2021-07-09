@@ -12,12 +12,22 @@
 */
 
 return [
-    'cart'   => 'Cistella',
+    'home' => 'Inici',
+    'products' => 'Productes',
+    'close' => 'Tanca',
+    'cart_products' => 'Producte(s) a la Cistella',
+    'cart_no_products' => 'NO Producte(s) a la Cistella', 
+    'continue_shopping' => 'Continuar Comprant',
+    'with_discount' => 'Amb descompte',
+    'proceed_checkout' => 'Realitzar Checkout',
+    'checkout' => 'Checkout',
+    'cart' => 'Cistella',
     'show_cart' => 'Mostrar Cistella',
     'id' => '#ID',
     'name' => 'Nom',
     'price' => 'Preu',
     'quantity' => 'Quantitat',
+    'qty' => 'Quant.',
     'attributes' => 'Atributs',
     'brand' => 'Marca',
     'action' => 'Acció',
@@ -30,4 +40,5 @@ return [
     'action_update' => 'Modifica',
     'action_clear' => 'Neteja Cistella',
     'action_add_message' => 'Producte afegit a la cistella.',
+    'cart_empty' => 'La teva Cistella es Buida',
 ];
