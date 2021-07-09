@@ -40,13 +40,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
         <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
-=======
-
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
->>>>>>> f8eb15a85f50fabdcdc39c88912ce03dad5716dd
             <div class="d-flex justify-content-between align-items-center">
                 <i class=" fas fa-store-alt fa-2x text-success"></i>
                 <h1 class="ml-3">ShopERP</h1>
@@ -100,24 +94,6 @@
                         @endif
                         <!-- ends -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                     </ul>
-<<<<<<< HEAD
-=======
-                    <ul class="ml-5 navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Languages
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('locale/en') }}">English</a>
-                                <a class="dropdown-item" href="{{ url('locale/ca') }}">Catalan</a>
-
-                                <a class="dropdown-item" href="{{ url('locale/es') }}">Spanish</a>
-                              </div>
-                        </li>
-
-                    </ul>
-                    <p class="m-auto ">{{ App::getLocale() }}</p>
->>>>>>> f8eb15a85f50fabdcdc39c88912ce03dad5716dd
                     <!-- Right Side Of Navbar -->
                     <ul class="ml-auto navbar-nav">
                         <li class="nav-item">
@@ -163,7 +139,6 @@
                         <a href="{{ url('locale/es') }}" class="btn btn-outline-dark">CAST</a>
                     </ul>
 
-        </nav>
         </nav>
         <main class="py-5 ">
             @yield('content')
