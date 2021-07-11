@@ -5,8 +5,9 @@
 return [
 
 
-
-    'title' => 'Aquest missatge es en Catala.',
+    'Catalan' => 'Castalà',
+    'English' => 'Anglès',
+    'Spanish' => 'Castellà', 
 
 
 

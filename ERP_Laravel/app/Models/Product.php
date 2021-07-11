@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Models\Order;
 
 class Product extends Model
 {
@@ -18,4 +19,8 @@ class Product extends Model
         'sales',
         'stock',
     ];
+
+    public function orders(){
+        return $this->belongsToMany(Order::class);
+    }
 }

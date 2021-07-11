@@ -29,12 +29,16 @@
         }
         body {
             height:100%;
-            position:relative;
+            position:relative
         }
+        .btn-outline-dark:not(:disabled):not(:disabled):active {
+            background: red;
+        } 
+
     </style>
 </head>
-<body>            
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+<body>
+        <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
             <div class="d-flex justify-content-between align-items-center">
                 <i class=" fas fa-store-alt fa-2x text-success"></i>
                 <h1 class="ml-3">ShopERP</h1>
@@ -87,21 +91,6 @@
                         @endif
                         <!-- ends -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                     </ul>
-                    <ul class="ml-5 navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Languages
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('locale/en') }}">English</a>
-                                <a class="dropdown-item" href="{{ url('locale/ca') }}">Catalan</a>
-
-                                <a class="dropdown-item" href="{{ url('locale/es') }}">Spanish</a>
-                              </div>
-                        </li>
-
-                    </ul>
-                    <p class="m-auto ">{{ App::getLocale() }}</p>
                     <!-- Right Side Of Navbar -->
                     <ul class="ml-auto navbar-nav">
                         @include('cart.partials.navbar')
@@ -138,6 +127,12 @@
                         @endguest
                     </ul>
                 </div>
+                <ul class="ml-5 navbar-nav">
+                        <a href="{{ url('locale/ca') }}" class="btn btn-outline-dark">CAT</a>
+                        <a href="{{ url('locale/en') }}" class="btn btn-outline-dark">EN</a>
+                        <a href="{{ url('locale/es') }}" class="btn btn-outline-dark">CAST</a>
+                    </ul>
+
         </nav>
         <main class="py-5 ">
             @yield('content')
