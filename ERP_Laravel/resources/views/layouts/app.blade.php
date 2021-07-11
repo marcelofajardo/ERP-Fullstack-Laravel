@@ -24,21 +24,19 @@
         * {
             font-family: 'Oswald', sans-serif;
         }
-
         .logo {
             font-family: 'Nunito', sans-serif;
         }
-
         body {
             height:100%;
             position:relative
         }
         .btn-outline-dark:not(:disabled):not(:disabled):active {
-        background: red;
-            } 
+            background: red;
+        } 
+
     </style>
 </head>
-
 <body>
         <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
             <div class="d-flex justify-content-between align-items-center">
@@ -48,7 +46,6 @@
                     <a class="nav-link" style="text-decoration:none;" href="{{ route('product.publicIndex') }}"><h5>{{ __('Products') }}</h5></a>
                 @endguest
             </div>
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -96,10 +93,7 @@
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="ml-auto navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-info" style="text-decoration:none;" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart text-info"></i> <h5>{{ __('cart.cart') }}</h5></a>
-
-                        </li>
+                        @include('cart.partials.navbar')
                         <!-- Authentication Links -->
                         @guest                        
                         @if (Route::has('login'))

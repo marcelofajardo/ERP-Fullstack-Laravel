@@ -17,7 +17,7 @@ class CartController extends Controller
     public function index()
     {
         //
-        return view('cart.index');
+        return view('cart.cart');
     }
 
     /**
@@ -28,16 +28,17 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        
         $product = Product::find($request->id);
         if ($product) {
             $cart = Cart::add(array(
                 'id' => $product->id,
                 'name' => $product->name,
-                'price' =>$product->price,
+                'price' => $product->price,
                 'quantity' => $request->quantity?$request->quantity:1,
                 'attributes' => array(
                     'brand' => $product->brand,
+                    'imgimg' => $product->image,
                 )
             ));
         }
@@ -58,8 +59,21 @@ class CartController extends Controller
 
     public function delete() 
     {
-        Cart::clear();
-        return view('cart.index');
+        Cart::clear();        
+        $cartCollection = \Cart::getContent();
+        return view('cart.cart')->with(['cartCollection' => $cartCollection]);;
     }    
+
+    public function shop()
+    {
+        $products = Product::all();
+        return view('shop')->with(['products' => $products]);
+    }
+
+    public function cart()  {
+        $cartCollection = \Cart::getContent();
+        return view('cart.cart')->with(['cartCollection' => $cartCollection]);;
+    }
+   
 
 }
