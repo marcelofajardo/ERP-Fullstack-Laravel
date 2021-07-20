@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\App;
+use Session;
 
 class Language
 {
@@ -18,10 +19,10 @@ class Language
      */
     public function handle(Request $request, Closure $next)
     {
-        if(\Session::has('locale'))
+        if(Session::has('locale'))
         {
-            \App::setlocale(\Session::get('locale'));
-        }
+            App::setlocale(Session::get('locale'));
+        }        
         return $next($request);
     }
 }

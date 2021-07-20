@@ -4,21 +4,20 @@
     <div class="mt-5 row">
         <div class="mx-auto col-md-8">
         <div class="mx-auto rounded jumbotron bg-warning">
-
-              <h2 class="text-center">Welcome to ShopERP</h2>
-              <h4 class="text-center">Amazing and awesome shop</h4>
+              <h2 class="text-center">{{__('home.Welcome to ShopERP')}}</h2>
+              <h4 class="text-center">{{__('home.Amazing and awesome shop')}}</h4>
 
           <div class="flex-row d-flex justify-content-around align-items-center">
-              <button type="button" data-toggle="modal" data-target="#exampleModal1" class="mt-3 btn btn-secondary">Terms and conditions</button>
-              <button type="button" data-toggle="modal" data-target="#exampleModal2" class="mt-3 btn btn-secondary">Policy of privacity</button>
-              <button type="button" data-toggle="modal" data-target="#exampleModal3" class="mt-3 btn btn-secondary">Shop Gallery</button>
+              <button type="button" data-toggle="modal" data-target="#exampleModal1" class="mt-3 btn btn-secondary">{{__('home.Terms and conditions')}}</button>
+              <button type="button" data-toggle="modal" data-target="#exampleModal2" class="mt-3 btn btn-secondary">{{__('home.Policy of privacity')}}</button>
+              <button type="button" data-toggle="modal" data-target="#exampleModal3" class="mt-3 btn btn-secondary">{{__('home.Shop Gallery')}}</button>
 
           </div>
           <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel1">Termss and conditions</h5>
+                  <h5 class="modal-title" id="exampleModalLabel1">{{__('home.Terms and conditions')}}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -29,7 +28,7 @@
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia similique veritatis nemo, quaerat commodi optio cupiditate tempora, quis doloribus pariatur atque est ab recusandae id delectus ut aliquid rem at, dolorem possimus obcaecati dolor. Magnam recusandae iste eaque consectetur, cupiditate in, nisi pariatur quasi incidunt illum adipisci nihil nemo numquam.</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('home.Close')}}</button>
                   <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
@@ -39,7 +38,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel2">Policy of privacity</h5>
+                  <h5 class="modal-title" id="exampleModalLabel2">{{__('home.Policy of privacity')}}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -50,7 +49,7 @@
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia similique veritatis nemo, quaerat commodi optio cupiditate tempora, quis doloribus pariatur atque est ab recusandae id delectus ut aliquid rem at, dolorem possimus obcaecati dolor. Magnam recusandae iste eaque consectetur, cupiditate in, nisi pariatur quasi incidunt illum adipisci nihil nemo numquam.</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('home.Close')}}</button>
                   <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
@@ -60,7 +59,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel3">Shop Gallery</h5>
+                  <h5 class="modal-title" id="exampleModalLabel3">{{__('home.Shop Gallery')}}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -111,7 +110,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('home.Close')}}</button>
                   <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
@@ -131,7 +130,7 @@
                       <div class="card-header bg-warning" id="headingOne">
                         <h2 class="mb-0">
                           <button class="text-center btn btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Our Shop
+                            {{__('home.Our Shop')}}
                           </button>
                         </h2>
                       </div>
@@ -146,7 +145,7 @@
                       <div class="card-header bg-warning" id="headingTwo">
                         <h2 class="mb-0">
                           <button class="text-center btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Products
+                            {{__('home.Products')}}
                           </button>
                         </h2>
                       </div>
@@ -172,7 +171,7 @@
                       <div class="card-header bg-warning" id="headingThree">
                         <h2 class="mb-0">
                           <button class="text-center btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Oferts
+                            {{__('home.Oferts')}}
                           </button>
                         </h2>
                       </div>

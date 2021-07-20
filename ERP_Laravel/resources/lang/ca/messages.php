@@ -5,7 +5,7 @@
 return [
 
 
-    'Catalan' => 'Castalà',
+    'Catalan' => 'Català',
     'English' => 'Anglès',
     'Spanish' => 'Castellà', 
 
