@@ -19,10 +19,13 @@ class Language
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Session::has('locale'))
-        {
+        if(Session::has('locale')){
             App::setlocale(Session::get('locale'));
         }        
+        else{
+            App::setLocale(config('app.fallback_locale'));
+        }
+        
         return $next($request);
     }
 }

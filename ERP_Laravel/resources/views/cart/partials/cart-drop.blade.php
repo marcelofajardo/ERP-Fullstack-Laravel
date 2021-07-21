@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-6">
                     <b>{{$item->name}}</b>
-                    <br><small>{{ __('cart.qty') }}: {{$item->quantity}}</small>
+                    <br><small>{{ __('qty') }}: {{$item->quantity}}</small>
                 </div>
                 <div class="col-lg-3">
                     <p>{{ number_format(Cart::get($item->id)->getPriceSum(),2) }} €</p>
@@ -22,7 +22,7 @@
     <li class="list-group-item">
         <div class="row">
             <div class="col-lg-10">
-                <b>{{ __('cart.total') }}: </b>{{ number_format(\Cart::getTotal(),2) }} €
+                <b>{{ __('total') }}: </b>{{ number_format(\Cart::getTotal(),2) }} €
             </div>
             <div class="col-lg-2">
                 <form action="{{ route('cart.delete') }}" method="POST">
@@ -35,12 +35,12 @@
     <br>
     <div class="row" style="margin: 0px;">
         <a class="btn btn-dark btn-sm btn-block" href="{{ route('cart.index') }}">
-            {{ __('cart.cart') }} <i class="fa fa-arrow-right"></i>
+            {{ __('cart') }} <i class="fa fa-arrow-right"></i>
         </a>
         <a class="btn btn-dark btn-sm btn-block" href="">
-            {{ __('cart.checkout') }} <i class="fa fa-arrow-right"></i>
+            {{ __('checkout') }} <i class="fa fa-arrow-right"></i>
         </a>
     </div>
 @else
-    <li class="list-group-item">{{ __('cart.cart_empty') }}</li>
+    <li class="list-group-item">{{ __('cart_empty') }}</li>
 @endif

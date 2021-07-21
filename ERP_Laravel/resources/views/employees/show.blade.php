@@ -15,7 +15,7 @@
                     <p class="card-text">{{$employee->email}}</p>
                     <p class="card-text">CIF/NIF: {{$employee->cif_nif}}</p>              
                     <p class="card-text">Phone: {{$employee->phone}}</p>
-                    <p class="card-text">Salary (Gross Annual): {{$employee->salary}}</p>
+                    <p class="card-text">{{__('Salary (Gross Annual)')}}: {{$employee->salary}}</p>
                  </div>
 
             </div>

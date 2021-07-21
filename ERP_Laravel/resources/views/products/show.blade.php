@@ -31,7 +31,7 @@
                     <a class="btn btn-info btn-lg btn-block" href="{{ route('cart.index', 0) }}" data-toggle="tooltip" data-placement="bottom" title="{{ __('cart.show_cart') }}"><i class="fas fa-shopping-cart"></i> {{ __('cart.show_cart') }}</a>
                 </div>  
                 <div class="card-body">
-                    <button type="submit" class="btn btn-warning">Comprar</button>
+                    <button type="submit" class="btn btn-warning">{{__('Buy')}}</button>
                 </div>
                 
             </div> 

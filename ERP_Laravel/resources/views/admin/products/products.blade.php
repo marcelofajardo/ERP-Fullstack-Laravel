@@ -26,13 +26,13 @@
                 <thead class="bg-warning">
                     <tr class="">
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Brand</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Image</th>
-                        <th>Sales</th>
-                        <th>Stock</th>
+                        <th>{{__('Name')}}</th>
+                        <th>{{__('Brand')}}</th>
+                        <th>{{__('Description')}}</th>
+                        <th>{{__('Price')}}</th>
+                        <th>{{__('Image')}}</th>
+                        <th>{{__('Sales')}}</th>
+                        <th>{{__('Stock')}}</th>
                         <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
