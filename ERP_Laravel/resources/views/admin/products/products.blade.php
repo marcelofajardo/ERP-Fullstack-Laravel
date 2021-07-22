@@ -33,7 +33,7 @@
                         <th>{{__('Image')}}</th>
                         <th>{{__('Sales')}}</th>
                         <th>{{__('Stock')}}</th>
-                        <th class="text-center">Acciones</th>
+                        <th class="text-center">{{__('Actions')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,9 +48,9 @@
                             <img src="{{ $product->image }}" width="30" alt="">
                         </td>
                         @if ($product->sales)
-                        <td>Disponible</td>
+                        <td>{{__('Available')}}</td>
                         @else
-                        <td>No disponible</td>
+                        <td>{{__('Not available')}}</td>
                         @endif
                         <td>{{ $product->stock }}</td>
                         <td>

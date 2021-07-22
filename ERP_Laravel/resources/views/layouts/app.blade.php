@@ -52,7 +52,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="ml-auto navbar-nav">
                         <li class="nav-item">
-                            <a class="ml-5 nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="ml-5 nav-link active" aria-current="page" href="/">{{__('Home')}}</a>
                         </li>
                         <!-- starts -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                         @if (Route::has('login'))
