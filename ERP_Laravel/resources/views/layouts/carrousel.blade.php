@@ -12,7 +12,8 @@
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>{{__('Welcome to ShopERP')}}</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. </p>
+                        
+                        <p class="rgba-complement-letter-3">{{__('Newsletter')}}</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                     </div>
                 </div>
@@ -22,7 +23,7 @@
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>{{__('Welcome to ShopERP')}}</h1>
-                        <p rgba-complement-letter-3>{{__('Amazing and awesome shop')}}</p>
+                        <p class="rgba-complement-letter-3">{{__('Amazing and awesome shop')}}</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                 </div>
@@ -32,7 +33,7 @@
                 <div class="container">
                     <div class="carousel-caption text-right">
                         <h1>{{__('Welcome to ShopERP')}}</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p class="rgba-complement-letter-3">{{__('Oferts')}}</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
                     </div>
                 </div>

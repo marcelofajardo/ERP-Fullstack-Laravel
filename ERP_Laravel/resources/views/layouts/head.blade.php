@@ -19,25 +19,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Styles -->
+
+
+    <link rel="stylesheet" href="{{ asset('/css/custom-app.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Oswald', sans-serif;
-        }
 
-        .logo {
-            font-family: 'Nunito', sans-serif;
-        }
-         
-        body {
-            height:100%;
-            position:relative
-        }
-        .btn-outline-dark:not(:disabled):not(:disabled):active {
-            background: red;
-        } 
-
-    </style>
 </head>
