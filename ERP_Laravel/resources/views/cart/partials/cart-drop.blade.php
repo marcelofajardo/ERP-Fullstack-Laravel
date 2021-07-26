@@ -42,5 +42,5 @@
         </a>
     </div>
 @else
-    <li class="list-group-item">{{ __('cart_empty') }}</li>
+    <li class="list-group-item">{{ __('Cart empty') }}</li>
 @endif

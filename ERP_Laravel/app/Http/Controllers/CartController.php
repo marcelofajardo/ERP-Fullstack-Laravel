@@ -42,7 +42,7 @@ class CartController extends Controller
                 )
             ));
         }
-        return redirect()->back()->with('success', __('cart.action_add_message'));
+        return redirect()->back()->with('success', __('Added to cart'));
     }
   
     /**

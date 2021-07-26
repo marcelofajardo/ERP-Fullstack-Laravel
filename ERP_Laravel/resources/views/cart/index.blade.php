@@ -13,7 +13,7 @@
         <div class="col-10">
             <form method="POST" action="{{ route('cart.delete') }}">
                 @csrf
-                <button class="btn btn-primary" type="submit" href="">{{ __('action_clear') }}</button>
+                <button class="btn btn-primary" type="submit" href="">{{ __('Action clear') }}</button>
             </form>
         </div>
     </div>
@@ -46,7 +46,7 @@
                     <form method="POST" action="{{route('cart.destroy',$item->id)}}">
                         @method('DELETE')
                         @csrf
-                        <button type="submit">{{ __('action_delete') }}</button>
+                        <button type="submit">{{ __('Action clear') }}</button>
                     </form>
                 </th>            
             </tr>
@@ -58,7 +58,7 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">{{ __('quantity') }}</th>
-                <th scope="col">{{ __('sub_total') }}</th>
+                <th scope="col">{{ __('Sub total') }}</th>
                 <th scope="col">{{ __('total') }}</th>
             </tr>
         </thead>
@@ -75,13 +75,13 @@
             <div class="col" style="text-align:right;">
                 <form method="GET" action="{{route('product.publicIndex')}}">
                     @csrf
-                    <button class="btn btn-primary" type="submit" href="">{{ __('back_product') }}</button>
+                    <button class="btn btn-primary" type="submit" href="">{{ __('Back product') }}</button>
                 </form>            
             </div>
             <div class="col" style="text-align:left;">
                 <form method="GET" action="{{ url('/') }}">
                     @csrf
-                    <button class="btn btn-primary" type="submit" href="">{{ __('back_home') }}</button>
+                    <button class="btn btn-primary" type="submit" href="">{{ __('Back home') }}</button>
                 </form>
             </div>
         </div>    

@@ -38,10 +38,10 @@
             <div class="col-lg-7">
                 <br>
                 @if(\Cart::getTotalQuantity()>0)
-                    <h4>{{ \Cart::getTotalQuantity()}} {{ __('cart_products') }}</h4><br>
+                    <h4>{{ \Cart::getTotalQuantity()}} {{ __('Cart products') }}</h4><br>
                 @else
-                    <h4>{{ __('cart_no_products') }}</h4><br>
-                    <a href="{{ route('product.publicIndex') }}" class="btn btn-dark"> {{ __('continue_shopping') }}</a>
+                    <h4>{{ __('Cart no products') }}</h4><br>
+                    <a href="{{ route('product.publicIndex') }}" class="btn btn-dark"> {{ __('Continue shopping') }}</a>
                 @endif
 
                 @foreach($cartCollection as $item)
@@ -53,7 +53,7 @@
                             <p>
                                 <b><a href="/products/{{ $item->id }}">{{ $item->name }}</a></b><br>
                                 <b>{{ __('price') }}: </b>{{ number_format($item->price,2) }} €<br>
-                                <b>{{ __('sub_total') }}: </b>{{ number_format(\Cart::get($item->id)->getPriceSum(),2) }} €<br>
+                                <b>{{ __('Sub total') }}: </b>{{ number_format(\Cart::get($item->id)->getPriceSum(),2) }} €<br>
                                 {{--  <b>{{ __('with_discount') }}: </b>{{ number_format(\Cart::get($item->id)->getPriceSumWithConditions(),2) }} --}}
                             </p>
                         </div>
@@ -72,7 +72,7 @@
                 @if(count($cartCollection)>0)
                     <form action="{{ route('cart.delete') }}" method="POST">
                         {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md">{{ __('action_clear') }}</button>
+                        <button class="btn btn-secondary btn-md">{{ __('Action clear') }}</button>
                     </form>
                 @endif
             </div>
@@ -83,8 +83,8 @@
                             <li class="list-group-item"><b>{{ __('total') }}: </b>{{ number_format(\Cart::getTotal(),2) }} €</li>
                         </ul>
                     </div>
-                    <br><a href="{{ route('product.publicIndex') }}" class="btn btn-dark">{{ __('continue_shopping') }}</a>
-                    <a href="#" class="btn btn-success">{{ __('proceed_checkout') }}</a>
+                    <br><a href="{{ route('product.publicIndex') }}" class="btn btn-dark">{{ __('Continue shopping') }}</a>
+                    <a href="#" class="btn btn-success">{{ __('Proceed checkout') }}</a>
                 </div>
             @endif
         </div>
