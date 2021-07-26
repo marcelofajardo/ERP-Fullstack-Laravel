@@ -26,14 +26,14 @@
                 <thead class="bg-warning">
                     <tr class="">
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Brand</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Image</th>
-                        <th>Sales</th>
-                        <th>Stock</th>
-                        <th class="text-center">Acciones</th>
+                        <th>{{__('Name')}}</th>
+                        <th>{{__('Brand')}}</th>
+                        <th>{{__('Description')}}</th>
+                        <th>{{__('Price')}}</th>
+                        <th>{{__('Image')}}</th>
+                        <th>{{__('Sales')}}</th>
+                        <th>{{__('Stock')}}</th>
+                        <th class="text-center">{{__('Actions')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,9 +48,9 @@
                             <img src="{{ $product->image }}" width="30" alt="">
                         </td>
                         @if ($product->sales)
-                        <td>Disponible</td>
+                        <td>{{__('Available')}}</td>
                         @else
-                        <td>No disponible</td>
+                        <td>{{__('Not available')}}</td>
                         @endif
                         <td>{{ $product->stock }}</td>
                         <td>

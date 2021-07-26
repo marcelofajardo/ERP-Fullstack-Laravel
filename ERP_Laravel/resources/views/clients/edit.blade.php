@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="cif_nif" class="col-md-4 col-form-label text-md-right">{{ __('Cif-Nif') }}</label>
+                            <label for="cif_nif" class="col-md-4 col-form-label text-md-right">{{ __('CIF/NIF') }}</label>
 
                             <div class="col-md-6">
                                 <input value="{{ $user->cif_nif}}" id="cif_nif" type="text" class="form-control"  name="cif_nif">

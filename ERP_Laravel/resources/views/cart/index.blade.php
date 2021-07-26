@@ -8,12 +8,12 @@
 <div class="container">
     <div class="row">
         <div class="col-1">
-            <h3>{{ __('cart.cart') }}</h3>
+            <h3>{{ __('cart') }}</h3>
         </div>
         <div class="col-10">
             <form method="POST" action="{{ route('cart.delete') }}">
                 @csrf
-                <button class="btn btn-primary" type="submit" href="">{{ __('cart.action_clear') }}</button>
+                <button class="btn btn-primary" type="submit" href="">{{ __('Action clear') }}</button>
             </form>
         </div>
     </div>
@@ -21,12 +21,12 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">{{ __('cart.id') }}</th>
-                <th scope="col">{{ __('cart.name') }}</th>
-                <th scope="col">{{ __('cart.price') }}</th>
-                <th scope="col">{{ __('cart.quantity') }}</th>
-                <th scope="col">{{ __('cart.attributes') }}</th>
-                <th scope="col">{{ __('cart.action') }}</th>
+                <th scope="col">{{ __('id') }}</th>
+                <th scope="col">{{ __('name') }}</th>
+                <th scope="col">{{ __('price') }}</th>
+                <th scope="col">{{ __('quantity') }}</th>
+                <th scope="col">{{ __('attributes') }}</th>
+                <th scope="col">{{ __('action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -39,14 +39,14 @@
                 <td>{{ number_format($item->quantity,0) }}</td>
                 <td>
                     @foreach ($item->attributes as $key => $attribute)
-                        {{ __('cart.'.$key) }}: {{$attribute}}.
+                        {{ __(''.$key) }}: {{$attribute}}.
                     @endforeach
                 </td>
                 <th scope="row">
                     <form method="POST" action="{{route('cart.destroy',$item->id)}}">
                         @method('DELETE')
                         @csrf
-                        <button type="submit">{{ __('cart.action_delete') }}</button>
+                        <button type="submit">{{ __('Action clear') }}</button>
                     </form>
                 </th>            
             </tr>
@@ -57,9 +57,9 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">{{ __('cart.quantity') }}</th>
-                <th scope="col">{{ __('cart.sub_total') }}</th>
-                <th scope="col">{{ __('cart.total') }}</th>
+                <th scope="col">{{ __('quantity') }}</th>
+                <th scope="col">{{ __('Sub total') }}</th>
+                <th scope="col">{{ __('total') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -75,13 +75,13 @@
             <div class="col" style="text-align:right;">
                 <form method="GET" action="{{route('product.publicIndex')}}">
                     @csrf
-                    <button class="btn btn-primary" type="submit" href="">{{ __('cart.back_product') }}</button>
+                    <button class="btn btn-primary" type="submit" href="">{{ __('Back product') }}</button>
                 </form>            
             </div>
             <div class="col" style="text-align:left;">
                 <form method="GET" action="{{ url('/') }}">
                     @csrf
-                    <button class="btn btn-primary" type="submit" href="">{{ __('cart.back_home') }}</button>
+                    <button class="btn btn-primary" type="submit" href="">{{ __('Back home') }}</button>
                 </form>
             </div>
         </div>    

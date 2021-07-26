@@ -30,11 +30,11 @@
               <div class="mx-auto col-md-6">
                 <div class="text-center card">
                     <div class="card-header bg-warning">
-                        Welcome to ShopERP
+                        {{__('Welcome to ShopERP')}}
                     </div>
                     <div class="card-body">
-                      <h3 class="card-title ">Hello {{ $name }}</h3>
-                      <h4 class="card-text">Thanks you</h4>
+                      <h3 class="card-title ">{{__('Hello')}} {{ $name }}</h3>
+                      <h4 class="card-text">{{__('Thanks you')}}</h4>
 
                     </div>
                     <div class="card-footer">

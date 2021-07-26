@@ -1,47 +1,10 @@
-<!doctype html>
-<html lang="{{  app()->getLocale() }}">
+@include('layouts.head')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Oswald', sans-serif;
-        }
-        .logo {
-            font-family: 'Nunito', sans-serif;
-        }
-        body {
-            height:100%;
-            position:relative
-        }
-        .btn-outline-dark:not(:disabled):not(:disabled):active {
-            background: red;
-        } 
-
-    </style>
-</head>
-<body>
-        <nav class=" navbar navbar-expand-lg navbar-light bg-warning">
+<body style="background-color: rgb(222, 247, 247)">
+        <nav class=" navbar navbar-expand-lg navbar-light rgba-primary-0">
             <div class="d-flex justify-content-between align-items-center">
-                <i class=" fas fa-store-alt fa-2x text-success"></i>
-                <h1 class="ml-3">ShopERP</h1>
+                <a class=" fas fa-store-alt fa-2x rgba-complement-letter-3"  href="/"></a>
+                <h1 class="ml-3 rgba-complement-letter-3">ShopERP</h1>
                 @guest
                     <a class="nav-link" style="text-decoration:none;" href="{{ route('product.publicIndex') }}"><h5>{{ __('Products') }}</h5></a>
                 @endguest
@@ -52,14 +15,14 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="ml-auto navbar-nav">
                         <li class="nav-item">
-                            <a class="ml-5 nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="ml-5 nav-link active" aria-current="page" href="/">{{__('Home')}}</a>
                         </li>
                         <!-- starts -- THE USER NEED TO BE LOGGED FOR SEE THESE LINKS-->
                         @if (Route::has('login'))
                         @auth
                         @if(Auth::user()->type === 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('product.index')}}">Products</a>
+                            <a class="nav-link " href="{{ route('product.index')}}">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clients.index')}}">Clients</a>
@@ -134,9 +97,10 @@
                     </ul>
 
         </nav>
-        <main class="py-5 ">
+        <main>
             @yield('content')
         </main>
+
     @include('layouts.footer')
 </body>
 </html>

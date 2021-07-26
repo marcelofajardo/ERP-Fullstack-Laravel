@@ -25,11 +25,11 @@
                 <thead class="bg-warning">
                   <tr class="">
 
-                      <th>Name</th>
-                      <th>Address</th>
-                      <th>Email</th>
-                      <th>Image</th>
-                      <th class="text-center">Acciones</th>
+                      <th>{{__('Name')}}</th>
+                      <th>{{__('Address')}}</th>
+                      <th>{{__('Email')}}</th>
+                      <th>{{__('Image')}}</th>
+                      <th class="text-center">{{__('Actions')}}</th>
                   </tr>
                 </thead>
                 <tbody>

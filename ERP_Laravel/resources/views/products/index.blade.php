@@ -6,7 +6,7 @@
     </div>    
 @endif
 <div class="container">
-    <h2>{{__("publicProducts.Our Products")}}</h2>
+    <h2>{{__("Our Products")}}</h2>
         <div class="mt-5 row">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 @foreach ($products as $product)
@@ -28,7 +28,7 @@
                           <form method="POST" action="{{ route('cart.store') }}">
                               @csrf
                               <input type="hidden" name="id" value="{{ $product->id }}"/>
-                              <button type="submit" style="z-index: 1; position:relative;" class="btn btn-warning btn-lg btn-block shop-button"><i class="fas fa-shopping-cart"></i>&nbsp;{{__("cart.action_add")}}</a>
+                              <button type="submit" style="z-index: 1; position:relative;" class="btn btn-warning btn-lg btn-block shop-button"><i class="fas fa-shopping-cart"></i>&nbsp;{{__("Add to cart")}}</a>
                           </form>
                         </div>
                     </div>
