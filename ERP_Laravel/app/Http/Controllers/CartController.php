@@ -74,6 +74,10 @@ class CartController extends Controller
         $cartCollection = \Cart::getContent();
         return view('cart.cart')->with(['cartCollection' => $cartCollection]);;
     }
+
+    public function checkout(){
+        
+    }
    
 
 }
