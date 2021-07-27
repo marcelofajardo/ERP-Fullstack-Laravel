@@ -15,19 +15,15 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->date('date');
-            $table->enum('status',['processing','completed','canceled']);
-            $table->enum('payment',['cash','paypal','creditcard','transfer']);
-            $table->integer('total_products');
-            $table->decimal('total');
-            $table->decimal('total_paid');
-            $table->text('comments')->nullable();
-            $table->unsignedBigInteger('bill_id');
-            $table->unsignedBigInteger('shipping_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('bill_id')->references('id')->on('bills');
-            $table->foreign('shipping_id')->references('id')->on('shippings');
+            $table->foreignId('order_id');
+            $table->foreignId('taxes_id')->nullable();
+            $table->foreignId('discount_id')->nullable();
+            $table->foreignId('payment_id')->nullable();
+            $table->foreignId('adress_id')->nullable();
+            $table->date('date');          
+            $table->decimal('gross_total');
+            $table->decimal('net_total');
+            $table->text('comments')->nullable();           
             $table->timestamps();
         });
     }
