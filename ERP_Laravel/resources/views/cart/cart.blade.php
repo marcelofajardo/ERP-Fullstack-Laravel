@@ -84,7 +84,7 @@
                         </ul>
                     </div>
                     <br><a href="{{ route('product.publicIndex') }}" class="btn btn-dark">{{ __('Continue shopping') }}</a>
-                    <a href="#" class="btn btn-success">{{ __('Proceed checkout') }}</a>
+                    <a href="{{route('order.index')}}" class="btn btn-success">{{ __('Proceed checkout') }}</a>
                 </div>
             @endif
         </div>

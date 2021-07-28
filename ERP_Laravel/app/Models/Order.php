@@ -17,6 +17,24 @@ use App\Http\Models\Taxes;
 class Order extends Model
 {
     use HasFactory;
+
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'taxes_id',
+        'discount_id',
+        'payment_id',
+        'adress_id',
+        'date',
+        'gross_total',
+        'net_total',
+        'comments'     
+    ];
+
     protected $guarded = [];
 
   

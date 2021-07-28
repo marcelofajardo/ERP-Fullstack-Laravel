@@ -75,9 +75,4 @@ class CartController extends Controller
         return view('cart.cart')->with(['cartCollection' => $cartCollection]);;
     }
 
-    public function checkout(){
-        
-    }
-   
-
 }

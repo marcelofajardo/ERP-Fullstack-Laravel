@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id');
+            $table->foreignId('user_id');
             $table->foreignId('taxes_id')->nullable();
             $table->foreignId('discount_id')->nullable();
             $table->foreignId('payment_id')->nullable();
