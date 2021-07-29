@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\odel;
+use App\Models\order_product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class order_productFactory extends Factory
@@ -12,7 +12,7 @@ class order_productFactory extends Factory
      *
      * @var string
      */
-    protected $model = odel::class;
+    protected $model = order_product::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,7 @@ class order_productFactory extends Factory
     public function definition()
     {
         return [
-            'order_id' => $this-> $faker->randomNumber(2),
+            'order_id' => $this-> faker->randomNumber(2),
             'product_id' => $this->faker->randomNumber(2),
             'discount_id' => $this->faker->randomNumber(2),
             'quantity' => $this->faker->randomFloat(2, 25, 100),

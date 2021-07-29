@@ -19,7 +19,7 @@ class CreateOrderProductTable extends Migration
             $table->foreignId('product_id');
             $table->foreignId('taxes_id')->nullable();
             $table->foreignId('discount_id')->nullable();
-            $table->integer('quantity');
+            $table->integer('quantity');       
         
             $table->timestamps();
         });
