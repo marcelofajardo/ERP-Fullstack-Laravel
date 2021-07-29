@@ -37,7 +37,7 @@
         <a class="btn btn-dark btn-sm btn-block" href="{{ route('cart.index') }}">
             {{ __('cart') }} <i class="fa fa-arrow-right"></i>
         </a>
-        <a class="btn btn-dark btn-sm btn-block" href="">
+        <a class="btn btn-dark btn-sm btn-block" href="{{Route('order.index')}}">
             {{ __('checkout') }} <i class="fa fa-arrow-right"></i>
         </a>
     </div>

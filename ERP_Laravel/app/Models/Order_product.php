@@ -27,13 +27,7 @@ class Order_product extends Model
         'quantity'
     ];
 
-    /**
-     * A order line belongs to one single order.
-     */
-    public function order(){
-        return $this->belongsTo(Order::class);
-    }
-
+  
     public function disounts(){
         return $this->belongsToMany(Discount::class);
     }

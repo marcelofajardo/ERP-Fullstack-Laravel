@@ -1,4 +1,4 @@
-<footer ">
+<footer >
     <div class="container-fluid p-3 mt-5  rgba-primary-0  font-weight-light text-white" style="position:fixed; bottom:0px; left: 0px; width: 100%; height: 7%;">
         <div class="row">
             <div class="col-md-4">            

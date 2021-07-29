@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 
 use Illuminate\Http\Request;
-use Cart;
+
+use Cart; /** https://github.com/darryldecode/laravelshoppingcart.git */
 
 class CartController extends Controller
 {
@@ -42,6 +43,19 @@ class CartController extends Controller
                 )
             ));
         }
+        $condition_1 = new \Darryldecode\Cart\CartCondition(array(
+            'name' => 'IVA 21%',
+            'type' => 'tax',
+            'target' => 'subtotal', // this condition will be applied to cart's subtotal when getSubTotal() is called.
+            'value' => '21%',
+            'attributes' => array( // attributes field is optional
+                'description' => 'Value added tax',
+                'more_data' => 'IVA deluxe'
+            ),
+            'order' => 1
+        ));
+        Cart::condition($condition_1);        
+
         return redirect()->back()->with('success', __('Added to cart'));
     }
   

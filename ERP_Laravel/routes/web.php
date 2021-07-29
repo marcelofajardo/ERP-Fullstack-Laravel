@@ -47,6 +47,7 @@ Route::middleware(['auth', 'admin.verify'])->group(function () {
 
 Route::get('/products', [ProductController::class, 'publicIndex'])->name('product.publicIndex');
 Route::get('/products/{id}', [ProductController::class, 'showPublic'])->name('product.showPublic');
+
 Route::middleware(['auth', 'admin.verify'])->group(function () {
     Route::get('/admin/products', [ProductController::class, 'index'])->name('product.index');
     Route::get('/admin/products/{id}', [ProductController::class, 'show'])->name('product.show');
@@ -63,9 +64,14 @@ Route::post('/cart/empty', [CartController::class, 'delete'])->name('cart.delete
 Route::post('/cart/{cart}', [CartController::class, 'destroy'])->name('cart.destroy');
 
 
-Route::get('/order/index}', [OrderController::class,'index'])->name('order.index');
-Route::get('/order/create}', [OrderController::class,'create'])->name('order.create');
-Route::post('/order/store}', [OrderController::class,'store'])->name('order.store');
+/** Orders CRUD */
+Route::get('/order/index', [OrderController::class,'index'])->name('order.index');
+Route::get('/order/list', [OrderController::class,'list'])->name('order.list');
+Route::get('/order/show/{id}', [OrderController::class,'show'])->name('order.show');
+
+
+Route::get('/order/create', [OrderController::class,'create'])->name('order.create');
+Route::post('/order/store', [OrderController::class,'store'])->name('order.store');
 
 
 

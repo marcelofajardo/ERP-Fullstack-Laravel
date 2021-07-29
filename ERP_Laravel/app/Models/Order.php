@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 /*use App\Http\Models\Product;*/
-use App\Http\Models\User;
+use App\Models\User;
 /*use App\Http\Models\Bill;
 use App\Http\Models\Shipping;*/
-use App\Http\Models\Order_product;
-use App\Http\Models\Discount;
-use App\Http\Models\Taxes;
+use App\Models\Order_product;
+use App\Models\Discount;
+use App\Models\Taxes;
 
 
 
@@ -48,8 +48,8 @@ class Order extends Model
      /**
      * One order has many lines
      */
-    public function order_products(){
-        return $this->hasMany(Order_product::class);
+    public function Order_products(){
+        return $this->hasMany(Order_product::class,'order_id','id');
     }
 
     /**

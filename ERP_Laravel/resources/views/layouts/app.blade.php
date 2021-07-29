@@ -37,13 +37,13 @@
                         </li>
                         @elseif(Auth::user()->type ==='client')
                         <li class="nav-item">
-                            <a class="nav-link" href="">Products</a>
+                            <a class="nav-link" href="{{route('product.publicIndex')}}">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('clients.index')}}">Clients</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Orders</a>
+                            <a class="nav-link " href="{{ route('order.list')}}">Orders</a>
                         </li>
                         @elseif(Auth::user()->type === 'employee')
                         <li class="nav-item">
